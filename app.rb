@@ -10,9 +10,10 @@ post '/res' do
     @score = rand(500) + 500
   elsif @ans == "y"
     @score = rand(500)
-  else @score = 0  
+  else
+    @score = 0
   end
-  
+
   erb :result
 end
 
