@@ -1,11 +1,19 @@
 # myapp.rb
 require 'sinatra'
 require 'erb'
+require 'omniauth'
+require 'omniauth-facebook'
+
+enable :sessions
+
+use OmniAuth::Builder do
+  provider :facebook,"335506539856315","3b3efe09fd9e49f3134a217b2fa9ac3b"
+end
 
 post '/res' do
-  @name = params[:name]
   @ans = params[:q1]
-
+  @name = session[:name]
+  
   if @ans == "n"
     @score = rand(500) + 500
   elsif @ans == "y"
@@ -19,4 +27,10 @@ end
 
 get '/' do
   erb :index
+end
+
+get '/auth/facebook/callback' do
+  @auth = request.env['omniauth.auth']
+  session[:name] = @auth[:info][:name]
+  erb :callback
 end

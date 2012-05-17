@@ -1,0 +1,20 @@
+<html>
+	<body>
+		
+	<p><strong>あなたの関西人度チェッカー</strong></p>
+		
+	<form action="/res" method="post">
+		
+		<p><%= @auth[:info][:name] %>さん</p>
+		
+		<p>「見誤る」をスラスラと読める？<br>
+		<input type="radio" name="q1" value="y">はい
+		<input type="radio" name="q1" value="n">いいえ
+		</p>
+	
+		<p>
+		<input type="submit" value="OK">
+		</p>
+
+	</form>
+</html>
