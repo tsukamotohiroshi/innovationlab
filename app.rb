@@ -15,7 +15,7 @@ post '/res' do
   @name = session[:name]
   
   if @ans == "n"
-    @score = rand(500) + 500
+    @score = rand(501) + 500
   elsif @ans == "y"
     @score = rand(500)
   else
