@@ -5,7 +5,10 @@ require 'omniauth'
 require 'omniauth-facebook'
 
 enable :sessions
-set :session_secret, ENV['SESSION_KEY']
+
+configure do
+  use Rack::Session::Cookie, :secret => Digest::SHA1.hexdigest(rand.to_s)
+end
 
 use OmniAuth::Builder do
   provider :facebook,"335506539856315","3b3efe09fd9e49f3134a217b2fa9ac3b"
