@@ -5,15 +5,33 @@ GEM
       activesupport (= 3.0.0)
     activesupport (3.0.0)
     addressable (2.2.7)
+    faraday (0.8.0)
+      multipart-post (~> 1.1)
+    hashie (1.2.0)
     heroku (2.24.1)
       launchy (>= 0.3.2)
       netrc (~> 0.7.1)
       rest-client (~> 1.6.1)
       rubyzip
+    httpauth (0.1)
     launchy (2.1.0)
       addressable (~> 2.2.6)
     mime-types (1.18)
+    multi_json (1.3.5)
+    multipart-post (1.1.5)
     netrc (0.7.1)
+    oauth2 (0.6.1)
+      faraday (~> 0.7)
+      httpauth (~> 0.1)
+      multi_json (~> 1.3)
+    omniauth (1.1.0)
+      hashie (~> 1.2)
+      rack
+    omniauth-facebook (1.3.0)
+      omniauth-oauth2 (~> 1.0.2)
+    omniauth-oauth2 (1.0.2)
+      oauth2 (~> 0.6.0)
+      omniauth (~> 1.0)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -32,4 +50,6 @@ PLATFORMS
 DEPENDENCIES
   active_support
   heroku
+  omniauth
+  omniauth-facebook
   sinatra
