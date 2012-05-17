@@ -5,6 +5,7 @@ require 'omniauth'
 require 'omniauth-facebook'
 
 enable :sessions
+set :session_secret, ENV['SESSION_KEY']
 
 use OmniAuth::Builder do
   provider :facebook,"335506539856315","3b3efe09fd9e49f3134a217b2fa9ac3b"
