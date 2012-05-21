@@ -7,7 +7,7 @@ require 'omniauth-facebook'
 enable :sessions
 
 use OmniAuth::Builder do
-  provider :facebook,"335506539856315","3b3efe09fd9e49f3134a217b2fa9ac3b"
+  provider :facebook,"",""
 end
 
 post '/res' do
